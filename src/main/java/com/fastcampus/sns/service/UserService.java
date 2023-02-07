@@ -65,7 +65,8 @@ public class UserService {
         }
 
         // 토큰 생성
-        return JwtTokenUtils.generateToken(userName, secretKey, expiredTimeMs);
+        String token = JwtTokenUtils.generateToken(userName, secretKey, expiredTimeMs);
+        return token;
     }
 
     public Page<Alarm> alarmList(Integer userId, Pageable pageable) {
